@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- cancel.workorder form view -->
+        <!-- oform --> 
+        <record id="cancel_oder_view_form" model="ir.ui.view">
+            <field name="name">cancel.order.form</field>
+            <field name="model">cancel.order</field>
+            
+            <field name="arch" type="xml">
+                <form string="Reason for cancellation">
+                    <group string="Reason for cancellation">
+                        <field name="note"/>
+                    </group>
+                    
+                    <footer>
+                        <button name="cancelled" string="Confirm" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="cancel_order_action" 
+                    name="Cancelled Work Order"
+                    res_model="cancel.order"
+                    view_mode="form" target="new"/>
+    </data>
+</odoo>
